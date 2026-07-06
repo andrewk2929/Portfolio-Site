@@ -1,13 +1,1013 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Kaufman | Portfolio</title>
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <h1>My portfolio</h1>
-    <p>Portfolio coming soon...</p>
+  <title>Andrew Kaufman | Student Developer & Researcher</title>
+  <meta name="title" content="Andrew Kaufman | Student Developer & Researcher" />
+  <meta name="description" content="Andrew Kaufman — high school senior, full-stack developer, and AI researcher. Building algorithm visualizers, computer vision apps, and machine learning projects while teaching Python and coaching swimming." />
+  <meta name="author" content="Andrew Kaufman" />
+  <meta name="keywords" content="Andrew Kaufman, Portfolio, Full Stack Developer, Python Developer, Machine Learning, Computer Vision, Glenbrook North High School, Northwestern University, Stanford Code in Place, React Developer, Software Engineer Student" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Andrew Kaufman | Student Developer & Researcher" />
+  <meta property="og:description" content="Portfolio — algorithms, machine learning, and full-stack projects, plus contact info." />
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Andrew Kaufman | Student Developer & Researcher" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #171717;
+    }
+    .dark body {
+      background-color: #000000;
+      color: #e5e5e5;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 4px; }
+    .dark ::-webkit-scrollbar-track { background: #0a0a0a; }
+    .dark ::-webkit-scrollbar-thumb { background: #262626; }
+    ::-webkit-scrollbar-thumb:hover { background: #a3a3a3; }
+    .dark ::-webkit-scrollbar-thumb:hover { background: #404040; }
+
+    .marquee-container {
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-25%); }
+    }
+    @keyframes marquee-reverse {
+      from { transform: translateX(-25%); }
+      to { transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-marquee { animation: marquee 30s linear infinite; }
+    .animate-marquee-reverse { animation: marquee-reverse 30s linear infinite; }
+    .animate-marquee:hover, .animate-marquee-reverse:hover { animation-play-state: paused; }
+    .animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+    .reveal { opacity: 0; transform: translateY(48px); transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-black text-neutral-900 dark:text-neutral-200 selection:bg-neutral-200 dark:selection:bg-neutral-800 selection:text-black dark:selection:text-white font-sans overflow-x-hidden transition-colors duration-300">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Andrew Kaufman","jobTitle":"Student & Full-Stack Developer","sameAs":["https://github.com/andrewk2929"],"knowsAbout":["Python","JavaScript","React","Machine Learning","Computer Vision","Full-Stack Development"],"alumniOf":{"@type":"EducationalOrganization","name":"Glenbrook North High School"}}
+  </script>
+
+  <div class="absolute top-0 left-0 w-full h-[100vh] overflow-hidden -z-10 pointer-events-none" aria-hidden="true">
+    <div id="parallaxBg" class="absolute inset-0 w-full h-[120%] bg-[url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=2664&auto=format&fit=crop')] bg-cover bg-center opacity-10 dark:opacity-30 transition-opacity duration-300"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/60 dark:via-black/60 to-gray-50 dark:to-black transition-colors duration-300"></div>
+  </div>
+
+  <header class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4">
+    <nav aria-label="Main Navigation" class="bg-white/80 dark:bg-[#111111]/80 backdrop-blur-md border border-neutral-200 dark:border-neutral-800/80 rounded-full px-6 py-3 flex items-center gap-6 shadow-xl dark:shadow-2xl transition-colors duration-300">
+      <button data-nav="home" class="text-sm font-semibold transition-colors">Home</button>
+      <button data-nav="work" class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors">Work</button>
+      <button data-nav="about" class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors">About</button>
+      <button data-nav="contact" class="text-sm text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors">Contact</button>
+      <div class="hidden sm:flex items-center gap-2 pl-4 border-l border-neutral-200 dark:border-neutral-800" role="status">
+        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+        <span id="greetingText" class="text-xs font-medium text-neutral-500"></span>
+      </div>
+      <button id="themeToggle" class="p-2 ml-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-400 transition-colors" aria-label="Switch theme">
+        <svg id="themeIconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 hidden">
+          <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+        </svg>
+        <svg id="themeIconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 hidden">
+          <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 pt-32 pb-20 space-y-20 relative">
+
+    <!-- ============ HOME VIEW ============ -->
+    <div id="view-home" class="space-y-20">
+
+      <section id="home" aria-label="Introduction" class="space-y-8 py-10 md:py-20">
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border transition-colors border-neutral-200 bg-gray-100 text-neutral-600 dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-400">Available for hire</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border transition-colors border-neutral-200 bg-gray-100 text-neutral-600 dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-400">Chicago area</span>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-neutral-900 dark:text-white leading-[1.1]">
+            Hello, I'm Andrew. <br />
+            <span class="text-neutral-500 dark:text-neutral-500">Student & Full-Stack Developer.</span>
+          </h1>
+          <p class="max-w-2xl text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            I build things that solve real problems — from pathfinding visualizers to posture-correcting web apps — and research generative AI for 3D CAD models at Northwestern. I teach the same way I build: one clear step at a time, whether that's coaching swimmers, leading Stanford's Code in Place sections, or running my school's Coding Club.
+          </p>
+          <div class="flex flex-wrap items-center gap-4">
+            <button data-nav="contact" aria-label="Connect now" class="px-6 py-3 bg-neutral-900 dark:bg-white text-white dark:text-black font-medium rounded-full hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors flex items-center gap-2 shadow-lg dark:shadow-none">
+              Connect now
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </button>
+            <button id="copyEmailHero" aria-label="Copy email address" class="px-6 py-3 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 font-medium rounded-full hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-black dark:hover:text-white transition-colors flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              Copy Email
+            </button>
+          </div>
+        </div>
+
+        <section aria-label="Contact Links" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="md:col-span-1 flex flex-col justify-between min-h-[180px] bg-gradient-to-br from-white to-gray-50 dark:from-neutral-900 dark:to-[#0a0a0a] border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 transition-all duration-300">
+            <div class="flex justify-between items-start">
+              <div class="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-neutral-500 dark:text-neutral-300"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <span class="flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+              </span>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">Open to Work</h3>
+              <p class="text-neutral-500 text-sm mt-1">Open to Internships</p>
+            </div>
+          </div>
+
+          <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="https://github.com/andrewk2929" target="_blank" rel="noopener noreferrer me" aria-label="GitHub Profile" class="group flex items-center justify-between p-4 bg-gray-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors">
+              <div class="flex items-center gap-3">
+                <div class="p-2 bg-white dark:bg-neutral-950 rounded-lg text-neutral-500 dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors border border-neutral-200 dark:border-transparent">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-sm font-medium text-neutral-800 dark:text-neutral-200">GitHub</span>
+                  <span class="text-xs text-neutral-500">@andrewk2929</span>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-neutral-400 dark:text-neutral-600 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="mailto:andrewk2929@gmail.com" aria-label="Email Andrew" class="group flex items-center justify-between p-4 bg-gray-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors">
+              <div class="flex items-center gap-3">
+                <div class="p-2 bg-white dark:bg-neutral-950 rounded-lg text-neutral-500 dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors border border-neutral-200 dark:border-transparent">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-sm font-medium text-neutral-800 dark:text-neutral-200">Email</span>
+                  <span class="text-xs text-neutral-500">andrewk2929@gmail.com</span>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-neutral-400 dark:text-neutral-600 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <a href="tel:+12244155734" aria-label="Call Andrew" class="group flex items-center justify-between p-4 bg-gray-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-xl hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors">
+              <div class="flex items-center gap-3">
+                <div class="p-2 bg-white dark:bg-neutral-950 rounded-lg text-neutral-500 dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors border border-neutral-200 dark:border-transparent">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 16.985 15H19a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2.015a2 2 0 0 1-.8 1.598l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-sm font-medium text-neutral-800 dark:text-neutral-200">Phone</span>
+                  <span class="text-xs text-neutral-500">(224) 415-5734</span>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-neutral-400 dark:text-neutral-600 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </a>
+            <div class="p-4 bg-gray-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors">
+              <div class="flex items-center gap-3">
+                <div class="p-2 bg-white dark:bg-neutral-950 rounded-lg text-neutral-500 dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors border border-neutral-200 dark:border-transparent">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-sm font-medium text-neutral-800 dark:text-neutral-200">Northbrook, IL</span>
+                  <span class="text-xs text-neutral-500">Remote Available</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="work" aria-label="Portfolio Projects" class="space-y-8 scroll-mt-32">
+        <div class="flex items-center justify-between">
+          <h2 class="text-3xl font-bold text-neutral-900 dark:text-white flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-neutral-500"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>
+            Selected Work
+          </h2>
+          <button data-nav="projects" aria-label="View all projects" class="text-sm text-neutral-500 hover:text-black dark:hover:text-white transition-colors flex items-center gap-1">
+            View all projects
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+        <div id="workFeatured" class="grid grid-cols-1 gap-6"></div>
+      </section>
+
+      <section aria-label="Skills and Technologies" class="space-y-6">
+        <h2 class="reveal text-3xl font-bold text-neutral-900 dark:text-white flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-neutral-500"><path d="M12 19h8"/><path d="m4 17 6-6-6-6"/></svg>
+          The Secret Sauce
+        </h2>
+        <div class="space-y-4">
+          <div class="reveal marquee-container w-full overflow-hidden select-none">
+            <div class="animate-marquee flex shrink-0 gap-4 py-4 items-center whitespace-nowrap" id="marqueeRowA"></div>
+          </div>
+          <div class="reveal marquee-container w-full overflow-hidden select-none">
+            <div class="animate-marquee-reverse flex shrink-0 gap-4 py-4 items-center whitespace-nowrap" id="marqueeRowB"></div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Impact Metrics" class="space-y-8">
+        <div id="statsGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"></div>
+      </section>
+
+      <section id="activities" aria-label="Leadership and Activities" class="space-y-8 scroll-mt-32">
+        <h2 class="text-3xl font-bold text-neutral-900 dark:text-white flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-neutral-500"><circle cx="12" cy="8" r="6"/><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/></svg>
+          Leadership & Activities
+        </h2>
+        <div id="activitiesGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+      </section>
+
+      <section id="about" aria-label="About and Experience" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 scroll-mt-32 items-start">
+        <div class="space-y-8">
+          <div class="space-y-6">
+            <h2 class="text-3xl font-bold text-neutral-900 dark:text-white flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-neutral-500"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>
+              About Me
+            </h2>
+            <div class="prose prose-neutral dark:prose-invert text-neutral-600 dark:text-neutral-400">
+              <p>I'm a senior at Glenbrook North High School who likes problems with a clear "did it work or not": algorithms, models, and full-stack apps where you can see the result. Outside of code, I teach: peer tutoring in math and English at school, coaching swimmers at Glenbrook Swim Club, and leading weekly Python sessions for Stanford's Code in Place.</p>
+              <p>I love swimming and have been doing it for over a decade, so coaching feels less like a job and more like sharing something I genuinely care about with the next generation of swimmers.</p>
+              <p>Right now I'm researching generative AI for 3D CAD models at Northwestern, evaluating how far you can compress a shape's latent representation before accuracy starts to slip.</p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">Education</h3>
+            <div class="p-4 bg-gray-50 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800/50 rounded-xl">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="font-medium text-neutral-900 dark:text-white">Glenbrook North High School</p>
+                  <p class="text-sm text-neutral-500">Senior</p>
+                </div>
+                <span class="text-sm font-mono text-neutral-600 dark:text-neutral-600 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 px-2 py-1 rounded shrink-0">Aug 2023 - Present</span>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="text-xs font-medium text-neutral-600 dark:text-neutral-400 bg-gray-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 px-2.5 py-1 rounded-full">College Board National Recognition Program</span>
+                <span class="text-xs font-medium text-neutral-600 dark:text-neutral-400 bg-gray-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 px-2.5 py-1 rounded-full">Honor Roll</span>
+                <span class="text-xs font-medium text-neutral-600 dark:text-neutral-400 bg-gray-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 px-2.5 py-1 rounded-full">Math & English Peer Tutor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <h3 class="text-xl font-semibold text-neutral-900 dark:text-white">Experience</h3>
+          <div id="experienceList" class="space-y-4"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ PROJECTS VIEW ============ -->
+    <div id="view-projects" class="hidden animate-fade-in-up space-y-8 min-h-[60vh]">
+      <div class="flex items-center justify-between mb-8">
+        <button data-nav="home" class="flex items-center gap-2 text-sm text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m15 18-6-6 6-6"/></svg>
+          Back to Home
+        </button>
+      </div>
+      <div class="space-y-4">
+        <h1 class="text-4xl font-bold text-neutral-900 dark:text-white">All Projects</h1>
+        <p class="text-neutral-600 dark:text-neutral-400 max-w-2xl">A complete collection of my open source work, side projects, and experiments.</p>
+      </div>
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      <a href="https://github.com/andrewk2929?tab=repositories" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 p-5 border border-dashed border-neutral-300 dark:border-neutral-700 rounded-2xl text-neutral-500 dark:text-neutral-400 hover:border-blue-400 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-colors font-medium text-sm">
+        View more projects on GitHub
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <!-- ============ FOOTER / CONTACT (always visible) ============ -->
+    <footer id="contact" class="pt-20 border-t border-neutral-200 dark:border-neutral-900 scroll-mt-32">
+      <div class="bg-white dark:bg-[#111111] rounded-3xl p-8 md:p-16 text-center border border-neutral-200 dark:border-neutral-800 relative overflow-hidden shadow-sm dark:shadow-none">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
+        <h2 class="text-4xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-6 tracking-tight">Let's build something.</h2>
+        <p class="text-xl text-neutral-600 dark:text-neutral-400 mb-10 max-w-lg mx-auto">Open to internships, research collaborations, or just talking through an interesting algorithm.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:andrewk2929@gmail.com" class="px-8 py-4 bg-neutral-900 dark:bg-white text-white dark:text-black text-lg font-bold rounded-full hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors">Send an email</a>
+          <button id="copyEmailContact" class="px-8 py-4 bg-transparent border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-white text-lg font-medium rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors">Copy email address</button>
+        </div>
+      </div>
+      <div class="mt-20 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-neutral-500 pb-8">
+        <p>© <span id="copyrightYear"></span> Andrew Kaufman. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="https://github.com/andrewk2929" rel="noopener noreferrer me" class="hover:text-black dark:hover:text-white transition-colors">GitHub</a>
+          <a href="mailto:andrewk2929@gmail.com" class="hover:text-black dark:hover:text-white transition-colors">Email</a>
+          <a href="tel:+12244155734" class="hover:text-black dark:hover:text-white transition-colors">Phone</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ============ TOAST ============ -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] transition-all duration-300 translate-y-8 opacity-0 pointer-events-none">
+    <div class="bg-neutral-900 text-white dark:bg-white dark:text-black px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 font-medium text-sm">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-green-500"><path d="M20 6 9 17l-5-5"/></svg>
+      <span id="toastText"></span>
+    </div>
+  </div>
+
+  <!-- ============ PROJECT MODAL ============ -->
+  <div id="projectModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" data-close-project></div>
+    <div class="relative w-full max-w-2xl bg-white dark:bg-[#111111] rounded-3xl shadow-2xl border border-neutral-200 dark:border-neutral-800 overflow-hidden flex flex-col max-h-[90vh] animate-fade-in-up">
+      <div id="projectModalHero" class="h-48 w-full relative shrink-0">
+        <button data-close-project class="absolute top-4 right-4 p-2 bg-black/20 hover:bg-black/40 text-white rounded-full transition-colors backdrop-blur-md z-10" aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16 text-white/40"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
+        </div>
+      </div>
+      <div class="p-8 overflow-y-auto">
+        <div class="flex items-center justify-between mb-2">
+          <h3 id="projectModalTitle" class="text-2xl font-bold text-neutral-900 dark:text-white"></h3>
+          <span id="projectModalQuarter" class="text-xs font-mono text-neutral-500 dark:text-neutral-400 border border-neutral-200 dark:border-neutral-800 bg-gray-50 dark:bg-neutral-900 px-2 py-1 rounded"></span>
+        </div>
+        <div id="projectModalTags" class="flex flex-wrap gap-2 mb-6"></div>
+        <div class="space-y-6 text-neutral-600 dark:text-neutral-300 leading-relaxed">
+          <p id="projectModalDesc"></p>
+          <p id="projectModalLongDesc"></p>
+          <div class="bg-gray-50 dark:bg-neutral-900/50 rounded-xl p-4 border border-neutral-200 dark:border-neutral-800">
+            <h4 class="text-sm font-semibold text-neutral-900 dark:text-white mb-2 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+              Tech Stack Highlights
+            </h4>
+            <ul id="projectModalTechList" class="grid grid-cols-2 gap-2 text-sm"></ul>
+          </div>
+        </div>
+        <div class="mt-8 flex flex-col gap-6">
+          <div class="flex gap-4">
+            <a id="projectModalLive" href="#" target="_blank" rel="noopener" class="flex-1 py-3 bg-neutral-900 dark:bg-white text-white dark:text-black font-semibold rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+              View Live Site
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </a>
+            <a id="projectModalRepo" href="#" target="_blank" rel="noopener" class="flex-1 py-3 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-white font-semibold rounded-xl hover:bg-gray-50 dark:hover:bg-neutral-800 transition-colors flex items-center justify-center gap-2">
+              Source Code
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ACTIVITY MODAL ============ -->
+  <div id="activityModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" data-close-activity></div>
+    <div class="relative w-full max-w-lg bg-white dark:bg-[#111111] rounded-3xl shadow-2xl border border-neutral-200 dark:border-neutral-800 overflow-hidden flex flex-col max-h-[85vh] animate-fade-in-up">
+      <div class="bg-gray-50 dark:bg-neutral-900/50 border-b border-neutral-200 dark:border-neutral-800 px-8 py-6 relative shrink-0">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <span id="activityModalPeriod" class="text-xs text-neutral-500"></span>
+            <h2 id="activityModalTitle" class="text-2xl font-bold text-neutral-900 dark:text-white leading-tight mt-1"></h2>
+          </div>
+          <button data-close-activity class="p-2 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-700 transition-colors shrink-0" aria-label="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-neutral-500 dark:text-neutral-400"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="p-8 overflow-y-auto">
+        <div id="activityModalTags" class="flex flex-wrap gap-2 mb-6"></div>
+        <p id="activityModalContent" class="text-neutral-600 dark:text-neutral-300 leading-relaxed"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ AI ASSISTANT WIDGET ============ -->
+  <button id="chatToggle" class="fixed bottom-6 right-6 z-50 p-4 bg-white dark:bg-neutral-800 text-black dark:text-white rounded-full shadow-lg hover:scale-110 transition-transform duration-300 flex items-center justify-center border border-neutral-200 dark:border-neutral-700" aria-label="Open AI Chat">
+    <svg id="chatIconOpen" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+    <svg id="chatIconClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  </button>
+  <div id="chatPanel" class="fixed bottom-24 right-4 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-[380px] bg-white/95 dark:bg-[#111111]/95 backdrop-blur-xl border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-2xl transition-all duration-300 origin-bottom-right flex flex-col overflow-hidden opacity-0 scale-90 pointer-events-none" style="max-height:calc(100dvh - 120px); height:500px;">
+    <div class="p-4 border-b border-neutral-200 dark:border-neutral-800 bg-gray-50/50 dark:bg-neutral-900/50 flex items-center gap-3">
+      <div class="p-2 bg-blue-500/10 rounded-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-blue-500 dark:text-blue-400"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold text-neutral-900 dark:text-white">Ask AI about Andrew</h3>
+        <p class="text-xs text-neutral-500 dark:text-neutral-400 flex items-center gap-1.5">
+          <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          Online
+        </p>
+      </div>
+    </div>
+    <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth bg-white dark:bg-[#111111]"></div>
+    <form id="chatForm" class="p-3 border-t border-neutral-200 dark:border-neutral-800 bg-gray-50/30 dark:bg-neutral-900/30">
+      <div class="relative flex items-center">
+        <input id="chatInput" type="text" placeholder="Ask about my skills..." class="w-full bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-white text-sm rounded-xl pl-4 pr-12 py-3 focus:outline-none focus:border-neutral-400 dark:focus:border-neutral-600 focus:ring-1 focus:ring-neutral-400 dark:focus:ring-neutral-600 transition-all placeholder:text-neutral-400 dark:placeholder:text-neutral-600" />
+        <button type="submit" class="absolute right-2 p-1.5 bg-neutral-900 dark:bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 dark:hover:bg-neutral-700 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+        </button>
+      </div>
+    </form>
+  </div>
+
+<script>
+(function(){
+  const EMAIL = 'andrewk2929@gmail.com';
+
+  const PROJECTS = [
+    {id:1, title:"Algorithm Visualizer", quarter:"Completed", description:"A deployed web app that animates Dijkstra's and A* pathfinding live on an interactive grid with adjustable weights and walls.", longDescription:"Algorithm Visualizer lets you drop walls, add weighted terrain, and watch Dijkstra's algorithm and A* trace the shortest path across a grid in real time. It was built to make abstract graph-search concepts tangible — you can see the frontier expand, the visited set grow, and the final path highlight step by step.", tags:["Python","Algorithms","Data Structures","Visualization"], link:"https://algovisualizer.sleepish.app/", repoUrl:"https://github.com/andrewk2929", gradient:"from-cyan-100 to-blue-100 dark:from-cyan-900/40 dark:to-blue-900/40", canvasAnim:true},
+    {id:2, title:"Posture Analysis", quarter:"Completed", description:"A full-stack website that analyzes posture through your webcam and sends personalized feedback in real time.", longDescription:"Ergonomic Eye watches your posture while you work and sends custom alerts the moment it detects slouching or when you've been sitting too long without a break. It combines a computer vision pipeline with a full-stack web app to turn posture correction into something automatic rather than something you have to remember.", tags:["Computer Vision","Full-Stack","Flask","JavaScript"], link:"https://ergonomic-eye.vercel.app/", repoUrl:"https://github.com/andrewk2929", gradient:"from-emerald-100 to-teal-100 dark:from-emerald-900/40 dark:to-teal-900/40", image:"assets/ergonomic-eye.png"},
+    {id:3, title:"News Comparison App", quarter:"Completed", description:"See how the same news story is covered across the political spectrum — pulls one article each from right-leaning, left-leaning, and neutral sources for a topic.", longDescription:"Right vs Left News lets you search a topic and pulls one article each from your chosen right-leaning, left-leaning, and (optionally) neutral sources, then summarizes each and scores its tone — making it easy to see how coverage of the same story differs across the political spectrum.", tags:["Full-Stack","NLP","Sentiment Analysis","Python"], link:"#", repoUrl:"https://github.com/andrewk2929/Right-vs-Left-News", gradient:"from-yellow-100 to-amber-100 dark:from-yellow-900/40 dark:to-amber-900/40", image:"assets/news-comparison-app.png"},
+    {id:4, title:"SignalGNN", quarter:"Completed", description:"A graph attention network that predicts cytokine output from receptor activation on a simulated biological signaling network.", longDescription:"SignalGNN models a simulated biological signaling network and trains a graph attention network to predict downstream cytokine output from simultaneous receptor activation. Without ever being told the underlying wiring, the model's attention weights converge on the correct causal pathway edges — a look at how graph neural networks can recover structure from data alone.", tags:["PyTorch","GNN","Machine Learning","Biology"], link:"#", repoUrl:"https://github.com/andrewk2929/SignalGNN", gradient:"from-indigo-100 to-violet-100 dark:from-indigo-900/40 dark:to-violet-900/40"},
+    {id:5, title:"Movement Detector App", quarter:"Completed", description:"A video-based detection system that executes tasks automatically upon detecting movement.", longDescription:"Movement Detector watches a video feed and triggers custom actions the moment it detects motion, built as a lightweight computer vision tool for automation and monitoring tasks.", tags:["Computer Vision","Python","Automation"], link:"#", repoUrl:"https://github.com/andrewk2929", gradient:"from-orange-100 to-red-100 dark:from-orange-900/40 dark:to-red-900/40"},
+    {id:6, title:"Handwritten Digit Recognition", quarter:"Completed", description:"A neural network trained on the MNIST dataset that predicts handwritten digits with over 97% accuracy.", longDescription:"This project implements a neural network trained on the MNIST handwritten digit dataset, achieving over 97% prediction accuracy — a hands-on deep dive into how neural networks learn to recognize patterns in image data.", tags:["Machine Learning","Neural Networks","Python","MNIST"], link:"#", repoUrl:"https://github.com/andrewk2929", gradient:"from-purple-100 to-blue-100 dark:from-purple-900/40 dark:to-blue-900/40"}
+  ];
+
+  const SKILLS_A = ["Python","Flask","Django","JavaScript","TypeScript","React","Svelte","Java","HTML & CSS","Bootstrap","SQLite"];
+  const SKILLS_B = ["Node.js","Git","GitHub","Unity 2D & 3D","C#","Firebase","Tailwind CSS","Vercel","Vite","English","Russian"];
+
+  const EXPERIENCE = [
+    {id:1, role:"Generative AI Researcher", company:"Northwestern University — 3D CAD Research", period:"May 2025 - Present", description:"Cut 3D-shape latent storage ~90% with minimal accuracy loss by evaluating Tucker decomposition rank tradeoffs for a CAD generative diffusion model."},
+    {id:2, role:"Stanford Engineering Section Leader", company:"Code in Place", period:"April 2026 - Present", description:"Facilitate weekly live Python coding sessions for 10 international students, teaching Stanford CS106A concepts like loops, lists, and functions."},
+    {id:3, role:"Coding Sensei", company:"Code Ninjas", period:"May 2024 - Jan 2025", description:"Taught 250+ kids ages 5-16 programming in HTML/CSS, JavaScript, Python, C#, Lua, and Scratch, plus data structures, algorithms, robotics, AI, and 3D design."},
+    {id:4, role:"Assistant Swim Coach", company:"Glenbrook Swim Club (GSC)", period:"Aug 2024 - Present", description:"Mentor 150+ swimmers ages 4-20 on technique, help organize meets, and make team recruitment recommendations."}
+  ];
+
+  const ACTIVITIES = [
+    {id:1, title:"Coding Club — Co-President", period:"Aug 2023 - Present", tags:["Leadership","Education"], excerpt:"Helping members learn HTML/CSS, JavaScript, GitHub, and Python.",
+      content:"As Co-President of Glenbrook North's Coding Club since August 2023, I help run a student-led club that teaches HTML/CSS, JavaScript, GitHub, and Python to fellow students — planning sessions, answering questions, and making programming feel approachable to people just getting started."},
+    {id:2, title:"Science Olympiad — Senior Board", period:"Aug 2025 - Present", tags:["Competition","Science"], excerpt:"Illinois State 2nd Place, Python Code Craze event.",
+      content:"As a member of the Science Olympiad Senior Board since August 2025, I compete and help lead the team at invitationals and state competitions. I placed 2nd in Illinois State for the Python Code Craze event, applying programming skills directly to competitive problem-solving."},
+    {id:3, title:"GSC Athlete Board", period:"Ongoing", tags:["Leadership","Web Dev"], excerpt:"Drafting the club newsletter and building tools for fellow swimmers.",
+      content:"As a member of the Glenbrook Swim Club Athlete Board, I draft the club newsletter and built the GSC Lost & Found website so teammates can report and reclaim lost items without relying on a group chat."}
+  ];
+
+  const STATS = [
+    {value:250, suffix:"+", label:"Students Empowered"},
+    {value:100, suffix:"+", label:"Swimmers Coached"},
+    {value:97, suffix:"%", label:"Digit Recognition Accuracy"},
+    {value:null, display:"2nd", label:"IL State Python Code Craze"}
+  ];
+
+  const SPARKLES_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-black/10 dark:text-white/20 group-hover:text-black/20 dark:group-hover:text-white/50 group-hover:scale-110 transition-all duration-500"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>';
+  const ARROW_UP_RIGHT = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>';
+  const ARROW_RIGHT = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>';
+  const CAL_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>';
+  const GITHUB_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>';
+
+  function tagPill(t, extra){ return `<span class="text-xs font-medium text-neutral-600 dark:text-neutral-400 bg-gray-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 px-2.5 py-1 rounded-full ${extra||''}">${t}</span>`; }
+
+  function projectMedia(p, sizeClass){
+    if(p.canvasAnim){
+      return `<div class="w-full ${sizeClass} bg-[#080b12] relative overflow-hidden">
+        <canvas data-anim="pathfinding" class="w-full h-full block"></canvas>
+      </div>`;
+    }
+    if(p.image){
+      return `<div class="w-full ${sizeClass} relative overflow-hidden bg-neutral-950">
+        <img src="${p.image}" alt="Screenshot of ${p.title}" loading="lazy" class="w-full h-full object-cover object-top" />
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+      </div>`;
+    }
+    return `<div class="w-full ${sizeClass} bg-gradient-to-br ${p.gradient} flex items-center justify-center relative overflow-hidden" role="img" aria-label="Abstract representation of ${p.title} project">
+      <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+      <div class="absolute inset-0 bg-white/0 dark:bg-black/0 dark:group-hover:bg-black/10 transition-colors duration-500"></div>
+      ${SPARKLES_SVG}
+    </div>`;
+  }
+
+  function projectLinkIcons(p){
+    const liveLink = p.link && p.link !== '#'
+      ? `<a href="${p.link}" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="View live site for ${p.title}" title="View live site" class="p-2 bg-black/50 hover:bg-black/70 text-white rounded-full backdrop-blur-md transition-colors">${ARROW_UP_RIGHT}</a>`
+      : '';
+    return `<div class="absolute top-3 right-3 z-10 flex items-center gap-2">
+      <a href="${p.repoUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()" aria-label="View source for ${p.title} on GitHub" title="View on GitHub" class="p-2 bg-black/50 hover:bg-black/70 text-white rounded-full backdrop-blur-md transition-colors">${GITHUB_SVG}</a>
+      ${liveLink}
+    </div>`;
+  }
+
+  function projectCardHome(p, delay){
+    return `<div class="reveal" style="transition-delay:${delay}ms">
+      <article tabindex="0" role="button" aria-label="View case study for ${p.title}" data-project-id="${p.id}"
+        class="project-card-trigger group p-0 overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#0f0f0f] rounded-2xl h-full transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-600 hover:shadow-xl hover:shadow-neutral-200/50 dark:hover:shadow-neutral-900/50 hover:-translate-y-1 hover:scale-[1.02] cursor-pointer focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-600">
+        <div class="flex flex-col h-full">
+          <div class="relative">
+            ${projectMedia(p, 'h-56 md:h-64')}
+            ${projectLinkIcons(p)}
+          </div>
+          <div class="flex-1 p-6 flex flex-col gap-6">
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <h3 class="text-2xl font-bold text-neutral-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-neutral-200 transition-colors">${p.title}</h3>
+                <span class="text-xs font-mono text-neutral-500 border border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900/50 px-2 py-1 rounded" aria-label="Project timeline: ${p.quarter}">${p.quarter}</span>
+              </div>
+              <p class="text-neutral-600 dark:text-neutral-400 leading-relaxed line-clamp-2">${p.description}</p>
+            </div>
+            <div class="flex flex-col gap-4 mt-auto">
+              <div class="flex flex-wrap gap-2" aria-label="Technologies used">${p.tags.map(t=>tagPill(t)).join('')}</div>
+              <button type="button" data-project-id="${p.id}" class="project-card-trigger inline-flex items-center gap-2 text-sm font-medium text-neutral-900 dark:text-white hover:underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-4 w-fit">
+                View Case Study ${ARROW_UP_RIGHT}
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>`;
+  }
+
+  function projectCardGrid(p, delay){
+    const extraTags = p.tags.length > 3 ? `<span class="text-xs text-neutral-400 py-1">+ ${p.tags.length-3}</span>` : '';
+    return `<div class="reveal" style="transition-delay:${delay}ms">
+      <article tabindex="0" role="button" data-project-id="${p.id}"
+        class="project-card-trigger group p-0 overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#0f0f0f] rounded-2xl h-full transition-all duration-300 hover:border-neutral-300 dark:hover:border-neutral-600 hover:shadow-xl hover:shadow-neutral-200/50 dark:hover:shadow-neutral-900/50 hover:-translate-y-1 hover:scale-[1.02] cursor-pointer focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-600">
+        <div class="flex flex-col h-full">
+          <div class="relative">
+            ${projectMedia(p, 'h-48')}
+            ${projectLinkIcons(p)}
+          </div>
+          <div class="flex-1 p-6 flex flex-col gap-6">
+            <div>
+              <div class="flex justify-between items-center mb-3">
+                <h3 class="text-xl font-bold text-neutral-900 dark:text-white">${p.title}</h3>
+                <span class="text-xs font-mono text-neutral-500 border border-neutral-200 dark:border-neutral-800 bg-gray-100 dark:bg-neutral-900/50 px-2 py-1 rounded">${p.quarter}</span>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed line-clamp-3">${p.description}</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-auto">${p.tags.slice(0,3).map(t=>tagPill(t)).join('')}${extraTags}</div>
+          </div>
+        </div>
+      </article>
+    </div>`;
+  }
+
+  function activityCard(a, delay){
+    return `<div class="reveal" style="transition-delay:${delay}ms">
+      <article data-activity-id="${a.id}" class="activity-card-trigger flex flex-col justify-between h-full bg-gray-50 dark:bg-neutral-900/30 group hover:bg-white dark:hover:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 transition-all duration-300 cursor-pointer hover:-translate-y-1 hover:shadow-xl hover:shadow-neutral-200/50 dark:hover:shadow-neutral-900/50">
+        <div class="space-y-4">
+          <div class="flex items-center gap-1 text-xs font-medium text-neutral-500 dark:text-neutral-400">${CAL_SVG} ${a.period}</div>
+          <h3 class="text-xl font-bold text-neutral-900 dark:text-white leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">${a.title}</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed line-clamp-3">${a.excerpt}</p>
+        </div>
+        <div class="pt-6 mt-2 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">${a.tags.map(t=>`<span class="text-[10px] uppercase tracking-wider font-semibold text-neutral-500 dark:text-neutral-400 bg-neutral-200/50 dark:bg-neutral-800 px-2 py-1 rounded">${t}</span>`).join('')}</div>
+          <button type="button" data-activity-id="${a.id}" class="activity-card-trigger flex items-center gap-2 text-sm font-semibold text-neutral-900 dark:text-white hover:gap-3 transition-all w-fit">Learn More ${ARROW_RIGHT}</button>
+        </div>
+      </article>
+    </div>`;
+  }
+
+  function statCard(s, delay){
+    const startText = s.value != null ? ('0' + (s.suffix||'')) : s.display;
+    const statAttrs = s.value != null ? `data-stat-target="${s.value}" data-stat-suffix="${s.suffix||''}"` : '';
+    return `<div class="reveal text-center p-6 bg-gray-50 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800/50 rounded-2xl" style="transition-delay:${delay}ms">
+      <div ${statAttrs} class="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white">${startText}</div>
+      <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-2">${s.label}</p>
+    </div>`;
+  }
+
+  function render(){
+    document.getElementById('workFeatured').innerHTML = PROJECTS.slice(0,3).map((p,i)=>projectCardHome(p, i*100)).join('');
+    document.getElementById('projectsGrid').innerHTML = PROJECTS.map((p,i)=>projectCardGrid(p, i*50)).join('');
+    document.getElementById('activitiesGrid').innerHTML = ACTIVITIES.map((a,i)=>activityCard(a, i*100)).join('');
+    document.getElementById('statsGrid').innerHTML = STATS.map((s,i)=>statCard(s, i*100)).join('');
+
+    const rowA = SKILLS_A.concat(SKILLS_A, SKILLS_A, SKILLS_A);
+    const rowB = SKILLS_B.concat(SKILLS_B, SKILLS_B, SKILLS_B);
+    const pillClass = "px-6 py-3 bg-white dark:bg-[#161616] border border-neutral-200 dark:border-neutral-800 rounded-xl text-neutral-600 dark:text-neutral-300 font-medium transition-all duration-300 cursor-default hover:border-neutral-400 dark:hover:border-neutral-500 hover:bg-gray-50 dark:hover:bg-neutral-800 hover:text-black dark:hover:text-white hover:scale-105 active:scale-95 shadow-sm dark:shadow-none";
+    document.getElementById('marqueeRowA').innerHTML = rowA.map(s=>`<div class="${pillClass}">${s}</div>`).join('');
+    document.getElementById('marqueeRowB').innerHTML = rowB.map(s=>`<div class="${pillClass}">${s}</div>`).join('');
+
+    document.getElementById('experienceList').innerHTML = EXPERIENCE.map(e=>`
+      <article class="p-4 bg-gray-50 dark:bg-neutral-900/30 border border-neutral-200 dark:border-neutral-800/50 rounded-xl hover:bg-gray-100 dark:hover:bg-neutral-900/50 transition-colors">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <span class="text-neutral-900 dark:text-white font-medium block">${e.role}</span>
+            <span class="text-sm text-neutral-500">${e.company}</span>
+          </div>
+          <span class="text-sm font-mono text-neutral-600 dark:text-neutral-600 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 px-2 py-1 rounded shrink-0">${e.period}</span>
+        </div>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-2">${e.description}</p>
+      </article>`).join('');
+
+    document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+    initPathfindingCanvases();
+    initStatCounters();
+  }
+
+  // ---- Stat counters (count up when scrolled into view) ----
+  function animateCount(el){
+    const target = Number(el.getAttribute('data-stat-target'));
+    const suffix = el.getAttribute('data-stat-suffix') || '';
+    if(Number.isNaN(target)) return;
+    const duration = 1400;
+    const startTime = performance.now();
+    function tick(now){
+      const p = Math.min(1, (now - startTime) / duration);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(eased * target) + suffix;
+      if(p < 1) requestAnimationFrame(tick);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  let statsObserver;
+  function initStatCounters(){
+    if(!statsObserver){
+      statsObserver = new IntersectionObserver((entries)=>{
+        entries.forEach(en=>{
+          if(en.isIntersecting){ animateCount(en.target); statsObserver.unobserve(en.target); }
+        });
+      }, {threshold:.4});
+    }
+    document.querySelectorAll('[data-stat-target]').forEach(el=>statsObserver.observe(el));
+  }
+
+  // ---- Pathfinding grid animation (Algorithm Visualizer card media) ----
+  function initPathfindingCanvases(){
+    document.querySelectorAll('canvas[data-anim="pathfinding"]:not([data-anim-ready])').forEach(canvas=>{
+      canvas.setAttribute('data-anim-ready', '1');
+      startPathfindingCanvas(canvas);
+    });
+  }
+
+  function startPathfindingCanvas(canvas){
+    const ctx = canvas.getContext('2d');
+    const cell = 22;
+    let w, h, cols, rows, walls, start, end, visitedSet, cameFrom, frontier, path, phase, pauseCounter, frame = 0;
+
+    function key(x,y){ return x+','+y; }
+
+    function resize(){
+      const rect = canvas.parentElement.getBoundingClientRect();
+      if(rect.width === 0 || rect.height === 0) return;
+      const dpr = window.devicePixelRatio || 1;
+      w = canvas.width = Math.floor(rect.width * dpr);
+      h = canvas.height = Math.floor(rect.height * dpr);
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      cols = Math.max(6, Math.floor(rect.width / cell));
+      rows = Math.max(4, Math.floor(rect.height / cell));
+      initMaze();
+    }
+
+    function initMaze(){
+      walls = new Set();
+      for(let x=0;x<cols;x++){
+        for(let y=0;y<rows;y++){
+          if(Math.random() < 0.18) walls.add(key(x,y));
+        }
+      }
+      start = {x:0, y:0};
+      end = {x: cols-1, y: rows-1};
+      walls.delete(key(start.x,start.y));
+      walls.delete(key(end.x,end.y));
+      visitedSet = new Set([key(start.x,start.y)]);
+      cameFrom = {};
+      frontier = [start];
+      path = [];
+      phase = 'search';
+      pauseCounter = 0;
+    }
+
+    function neighbors(p){
+      const dirs = [[1,0],[-1,0],[0,1],[0,-1]];
+      const out = [];
+      for(const [dx,dy] of dirs){
+        const nx = p.x+dx, ny = p.y+dy;
+        if(nx>=0 && nx<cols && ny>=0 && ny<rows && !walls.has(key(nx,ny))) out.push({x:nx,y:ny});
+      }
+      return out;
+    }
+
+    function heuristic(p){ return Math.abs(p.x-end.x) + Math.abs(p.y-end.y); }
+
+    function step(){
+      if(phase === 'search'){
+        if(frontier.length === 0){ phase = 'pause'; return; }
+        frontier.sort((a,b)=> heuristic(a) - heuristic(b));
+        const current = frontier.shift();
+        if(current.x === end.x && current.y === end.y){
+          let cur = key(current.x,current.y);
+          path = [current];
+          while(cameFrom[cur]){ path.push(cameFrom[cur]); cur = key(cameFrom[cur].x, cameFrom[cur].y); }
+          phase = 'path';
+          return;
+        }
+        for(const n of neighbors(current)){
+          const k = key(n.x,n.y);
+          if(!visitedSet.has(k)){ visitedSet.add(k); cameFrom[k] = current; frontier.push(n); }
+        }
+      } else if(phase === 'path'){
+        phase = 'pause';
+      } else if(phase === 'pause'){
+        pauseCounter++;
+        if(pauseCounter > 70) initMaze();
+      }
+    }
+
+    function draw(){
+      if(!w || !h) return;
+      ctx.clearRect(0,0,w,h);
+      const dpr = window.devicePixelRatio || 1;
+      const cw = cell * dpr;
+      ctx.fillStyle = 'rgba(59,130,246,0.14)';
+      visitedSet.forEach(k=>{
+        const [x,y] = k.split(',').map(Number);
+        ctx.fillRect(x*cw, y*cw, cw-2, cw-2);
+      });
+      ctx.fillStyle = 'rgba(255,255,255,0.05)';
+      walls.forEach(k=>{
+        const [x,y] = k.split(',').map(Number);
+        ctx.fillRect(x*cw, y*cw, cw-2, cw-2);
+      });
+      if(path.length){
+        ctx.fillStyle = 'rgba(251,191,36,0.7)';
+        path.forEach(p=>ctx.fillRect(p.x*cw, p.y*cw, cw-2, cw-2));
+      }
+      ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+      ctx.lineWidth = 1;
+      for(let x=0;x<=cols;x++){ ctx.beginPath(); ctx.moveTo(x*cw,0); ctx.lineTo(x*cw,h); ctx.stroke(); }
+      for(let y=0;y<=rows;y++){ ctx.beginPath(); ctx.moveTo(0,y*cw); ctx.lineTo(w,y*cw); ctx.stroke(); }
+      ctx.fillStyle = '#3b82f6';
+      ctx.beginPath(); ctx.arc(start.x*cw+cw/2, start.y*cw+cw/2, cw*0.22, 0, Math.PI*2); ctx.fill();
+      ctx.fillStyle = '#fbbf24';
+      ctx.beginPath(); ctx.arc(end.x*cw+cw/2, end.y*cw+cw/2, cw*0.22, 0, Math.PI*2); ctx.fill();
+    }
+
+    function loop(){
+      frame++;
+      if(frame % 3 === 0) step();
+      draw();
+      requestAnimationFrame(loop);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    loop();
+  }
+
+  // ---- Reveal on scroll ----
+  let observer;
+  function observeReveals(){
+    if(!observer){
+      observer = new IntersectionObserver((entries)=>{
+        entries.forEach(en=>{
+          if(en.isIntersecting){ en.target.classList.add('in'); observer.unobserve(en.target); }
+        });
+      }, {threshold:.1, rootMargin:'50px'});
+    }
+    document.querySelectorAll('.reveal:not(.in)').forEach(el=>observer.observe(el));
+  }
+
+  // ---- Theme ----
+  const root = document.documentElement;
+  const sunIcon = document.getElementById('themeIconSun');
+  const moonIcon = document.getElementById('themeIconMoon');
+  function applyTheme(isDark){
+    root.classList.toggle('dark', isDark);
+    sunIcon.classList.toggle('hidden', !isDark);
+    moonIcon.classList.toggle('hidden', isDark);
+  }
+  function initTheme(){
+    const saved = localStorage.getItem('theme') || 'dark';
+    applyTheme(saved === 'dark');
+  }
+  document.getElementById('themeToggle').addEventListener('click', ()=>{
+    const next = !root.classList.contains('dark');
+    applyTheme(next);
+    localStorage.setItem('theme', next ? 'dark' : 'light');
+  });
+
+  // ---- Greeting ----
+  function headerGreeting(){
+    const h = new Date().getHours();
+    if(h<12) return 'Good Morning';
+    if(h<18) return 'Good Afternoon';
+    return 'Good Evening';
+  }
+  function chatGreeting(){
+    const h = new Date().getHours();
+    if(h<12) return 'Good morning';
+    if(h<18) return 'Good afternoon';
+    return 'Good evening';
+  }
+  document.getElementById('greetingText').textContent = headerGreeting();
+
+  // ---- Parallax ----
+  const parallaxEl = document.getElementById('parallaxBg');
+  window.addEventListener('scroll', ()=>{
+    parallaxEl.style.transform = `translateY(${window.scrollY*0.4}px)`;
+  }, {passive:true});
+
+  // ---- Toast ----
+  const toastEl = document.getElementById('toast');
+  const toastText = document.getElementById('toastText');
+  let toastTimer;
+  function showToast(msg){
+    toastText.textContent = msg;
+    toastEl.classList.remove('translate-y-8','opacity-0','pointer-events-none');
+    toastEl.classList.add('translate-y-0','opacity-100');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>{
+      toastEl.classList.add('translate-y-8','opacity-0','pointer-events-none');
+      toastEl.classList.remove('translate-y-0','opacity-100');
+    }, 3000);
+  }
+
+  // ---- Copy email ----
+  function copyEmail(){
+    navigator.clipboard.writeText(EMAIL).then(()=>showToast('Email copied to clipboard!'));
+  }
+  document.getElementById('copyEmailHero').addEventListener('click', copyEmail);
+  document.getElementById('copyEmailContact').addEventListener('click', copyEmail);
+
+  // ---- View routing ----
+  const VIEWS = ['home','projects'];
+  function showView(name){
+    VIEWS.forEach(v=>document.getElementById('view-'+v).classList.toggle('hidden', v!==name));
+    document.querySelectorAll('[data-nav]').forEach(btn=>{
+      const key = btn.getAttribute('data-nav');
+      const active = (key === name) || (key === 'home' && name === 'home');
+      const isSection = key === 'work' || key === 'about' || key === 'contact';
+      if(isSection) return;
+      btn.classList.toggle('text-neutral-900', active);
+      btn.classList.toggle('dark:text-white', active);
+      btn.classList.toggle('font-semibold', active);
+      btn.classList.toggle('text-neutral-600', !active);
+      btn.classList.toggle('dark:text-neutral-400', !active);
+    });
+    observeReveals();
+  }
+
+  function navigate(hash, scrollTarget){
+    if(location.hash === '#'+hash){ route(); }
+    else { location.hash = hash; }
+    if(scrollTarget){
+      setTimeout(()=>document.getElementById(scrollTarget)?.scrollIntoView({behavior:'smooth'}), 60);
+    }
+  }
+
+  function route(){
+    const h = location.hash.replace('#','');
+    if(h === 'projects'){ showView('projects'); window.scrollTo({top:0}); }
+    else {
+      showView('home');
+      if(h === 'work' || h === 'about' || h === 'contact'){
+        setTimeout(()=>document.getElementById(h)?.scrollIntoView({behavior:'smooth'}), 60);
+      } else {
+        window.scrollTo({top:0});
+      }
+    }
+  }
+
+  document.querySelectorAll('[data-nav]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const key = btn.getAttribute('data-nav');
+      if(key === 'home'){ navigate('', null); }
+      else if(key === 'work' || key === 'about' || key === 'contact'){ navigate('', key); }
+      else { navigate(key, null); }
+    });
+  });
+  window.addEventListener('hashchange', route);
+
+  // ---- Project modal ----
+  const projectModal = document.getElementById('projectModal');
+  function openProjectModal(id){
+    const p = PROJECTS.find(pr => pr.id === id);
+    if(!p) return;
+    document.getElementById('projectModalHero').className = `h-48 w-full relative shrink-0 bg-gradient-to-br ${p.gradient}`;
+    document.getElementById('projectModalTitle').textContent = p.title;
+    document.getElementById('projectModalQuarter').textContent = p.quarter;
+    document.getElementById('projectModalTags').innerHTML = p.tags.map(t=>tagPill(t)).join('');
+    document.getElementById('projectModalDesc').textContent = p.description;
+    document.getElementById('projectModalLongDesc').textContent = p.longDescription;
+    document.getElementById('projectModalTechList').innerHTML = p.tags.map(t=>`<li class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> ${t}</li>`).join('');
+    document.getElementById('projectModalLive').href = p.link;
+    document.getElementById('projectModalRepo').href = p.repoUrl;
+    projectModal.classList.remove('hidden');
+    projectModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeProjectModal(){
+    projectModal.classList.add('hidden');
+    projectModal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-close-project]').forEach(el=>el.addEventListener('click', closeProjectModal));
+  document.body.addEventListener('click', (e)=>{
+    const trigger = e.target.closest('.project-card-trigger');
+    if(trigger){ openProjectModal(Number(trigger.getAttribute('data-project-id'))); }
+  });
+
+  // ---- Activity modal ----
+  const activityModal = document.getElementById('activityModal');
+  function openActivityModal(id){
+    const a = ACTIVITIES.find(ac => ac.id === id);
+    if(!a) return;
+    document.getElementById('activityModalPeriod').textContent = a.period;
+    document.getElementById('activityModalTitle').textContent = a.title;
+    document.getElementById('activityModalTags').innerHTML = a.tags.map(t=>tagPill(t)).join('');
+    document.getElementById('activityModalContent').textContent = a.content;
+    activityModal.classList.remove('hidden');
+    activityModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeActivityModal(){
+    activityModal.classList.add('hidden');
+    activityModal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-close-activity]').forEach(el=>el.addEventListener('click', closeActivityModal));
+  document.body.addEventListener('click', (e)=>{
+    const trigger = e.target.closest('.activity-card-trigger');
+    if(trigger){ openActivityModal(Number(trigger.getAttribute('data-activity-id'))); }
+  });
+
+  // ---- AI chat widget (local rule-based responder, no external API calls) ----
+  const chatToggle = document.getElementById('chatToggle');
+  const chatPanel = document.getElementById('chatPanel');
+  const chatIconOpen = document.getElementById('chatIconOpen');
+  const chatIconClose = document.getElementById('chatIconClose');
+  const chatMessages = document.getElementById('chatMessages');
+  let chatOpen = false;
+
+  function addMessage(role, text){
+    const wrap = document.createElement('div');
+    wrap.className = `flex ${role === 'user' ? 'justify-end' : 'justify-start'}`;
+    const bubble = document.createElement('div');
+    bubble.className = `max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed shadow-sm ${role === 'user' ? 'bg-neutral-900 dark:bg-white text-white dark:text-black rounded-tr-sm' : 'bg-gray-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 rounded-tl-sm border border-neutral-200 dark:border-neutral-700'}`;
+    bubble.textContent = text;
+    wrap.appendChild(bubble);
+    chatMessages.appendChild(wrap);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function seedGreeting(){
+    if(chatMessages.children.length) return;
+    addMessage('model', `${chatGreeting()}! I'm Andrew's AI assistant. Feel free to ask me about his work on ${PROJECTS[0].title}, his skills in ${SKILLS_A[0]}, or anything else regarding his portfolio.`);
+  }
+
+  function localReply(message){
+    const q = message.toLowerCase();
+    const project = PROJECTS.find(p => q.includes(p.title.toLowerCase().trim()));
+    if(project) return `${project.title} is ${project.quarter.toLowerCase()}. ${project.description}`;
+    if(SKILLS_A.concat(SKILLS_B).some(s => q.includes(s.toLowerCase()))) return `Yep, that's one of Andrew's core skills — see the Secret Sauce section for the full list.`;
+    if(q.includes('contact') || q.includes('email') || q.includes('hire') || q.includes('intern')) return `You can reach Andrew at ${EMAIL} or through the contact section below.`;
+    if(q.includes('experience') || q.includes('work') || q.includes('research')) return `Andrew is currently researching generative AI for 3D CAD models at ${EXPERIENCE[0].company}, and also teaches Python as a Section Leader for Stanford's Code in Place.`;
+    if(q.includes('school') || q.includes('education') || q.includes('grade')) return `Andrew is a senior at Glenbrook North High School, recognized by the College Board National Recognition Program and Honor Roll.`;
+    return `Thanks for asking! Andrew specializes in Python, React, and full-stack development, with a focus on algorithms and machine learning. Check out the Work and About sections for more details.`;
+  }
+
+  chatToggle.addEventListener('click', ()=>{
+    chatOpen = !chatOpen;
+    chatPanel.classList.toggle('opacity-100', chatOpen);
+    chatPanel.classList.toggle('scale-100', chatOpen);
+    chatPanel.classList.toggle('pointer-events-none', !chatOpen);
+    chatPanel.classList.toggle('opacity-0', !chatOpen);
+    chatPanel.classList.toggle('scale-90', !chatOpen);
+    chatIconOpen.classList.toggle('hidden', chatOpen);
+    chatIconClose.classList.toggle('hidden', !chatOpen);
+    if(chatOpen) seedGreeting();
+  });
+
+  document.getElementById('chatForm').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const input = document.getElementById('chatInput');
+    const msg = input.value.trim();
+    if(!msg) return;
+    addMessage('user', msg);
+    input.value = '';
+    setTimeout(()=>addMessage('model', localReply(msg)), 400);
+  });
+
+  // ---- Init ----
+  initTheme();
+  render();
+  route();
+  observeReveals();
+})();
+</script>
 </body>
 </html>
